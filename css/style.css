@@ -760,6 +760,184 @@ ul { list-style: none; }
   color: var(--brown-muted);
 }
 
+/* ---------- Aboutページ ---------- */
+.page-hero {
+  padding: 48px 0 0;
+  text-align: center;
+}
+.page-hero-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--orange-dark);
+}
+.page-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.5vw, 36px);
+  font-weight: 900;
+  color: var(--brown-ink);
+  margin-top: 8px;
+}
+
+.concept {
+  padding: 56px 0 72px;
+  text-align: center;
+}
+.concept-statement {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3.5vw, 38px);
+  font-weight: 900;
+  line-height: 1.7;
+  color: var(--brown-ink);
+  margin: 16px 0 24px;
+}
+.concept-statement em {
+  font-style: normal;
+  color: var(--orange);
+}
+.concept-lead {
+  font-size: 15px;
+  line-height: 2.2;
+  color: var(--brown-soft);
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+
+.concept-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  text-align: left;
+}
+.concept-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 26px 22px;
+  box-shadow: var(--shadow-warm);
+  color: var(--orange);
+}
+.concept-item h3 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--brown-ink);
+}
+.concept-item p {
+  font-size: 12.5px;
+  line-height: 1.9;
+  color: #8a7460;
+}
+.concept-item-accent {
+  background: var(--orange);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(232, 89, 12, 0.25);
+}
+.concept-item-accent h3 { color: #fff; }
+.concept-item-accent p { color: #ffe3cf; }
+
+.values {
+  background: #fff;
+  border-radius: 48px 48px 0 0;
+  padding: 72px 0;
+}
+.values .section-eyebrow { margin-bottom: 8px; }
+.values .section-title { margin-bottom: 36px; }
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.value-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--cream-card);
+  border-radius: 20px;
+  padding: 30px 28px;
+  color: var(--orange-dark);
+}
+.value-card h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--brown-ink);
+}
+.value-card p {
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: #8a7460;
+}
+
+.about-product {
+  background: #fff;
+  padding: 0 0 72px;
+}
+.about-product-card {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  background: var(--green-deep);
+  border-radius: 32px;
+  padding: 44px 52px;
+}
+.about-product-card img { border-radius: 20px; }
+.about-product-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+.about-product-detail h2 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 900;
+  color: #fff;
+}
+.about-product-detail p {
+  font-size: 14px;
+  line-height: 2;
+  color: var(--green-mint);
+}
+
+.company { padding: 72px 0; }
+.company .section-eyebrow { margin-bottom: 8px; }
+.company .section-title { margin-bottom: 32px; }
+.company-table {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 20px;
+  padding: 8px 36px;
+  box-shadow: var(--shadow-warm);
+}
+.company-table > div {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 16px;
+  padding: 18px 0;
+}
+.company-table > div + div { border-top: 1px solid #f0e6d6; }
+.company-table dt {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--brown-muted);
+}
+.company-table dd {
+  font-size: 14px;
+  color: var(--brown-text);
+}
+.company-link {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.global-nav a[aria-current="page"] { color: var(--orange-dark); }
+
 /* ==========================================================
    レスポンシブ
    ========================================================== */
@@ -825,6 +1003,17 @@ ul { list-style: none; }
   .content-columns { grid-template-columns: 1fr; }
 
   .support-grid { grid-template-columns: 1fr; }
+
+  .concept-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .concept-item-accent { grid-column: 1 / -1; }
+  .values-grid { grid-template-columns: 1fr; }
+  .about-product-card {
+    grid-template-columns: 1fr;
+    padding: 32px 28px;
+  }
+  .about-product-card img { max-width: 300px; margin: 0 auto; }
+  .about-product-detail { align-items: stretch; text-align: left; }
+  .company-table > div { grid-template-columns: 100px 1fr; }
 
   .footer-inner { flex-direction: column; gap: 36px; }
   .footer-nav { gap: 40px; }
